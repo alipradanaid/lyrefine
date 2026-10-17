@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark"></html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#151827">
+<meta name="color-scheme" content="dark">
+  <meta name="description" content="Lyrefine membantu menemukan kalimat, paragraf, dan gagasan yang berpotensi berulang.">
+  <title>Lyrefine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Lyrefine beranda">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="brand-name">Lyrefine</span>
+        <span class="brand-by">by Alypradana</span>
+      </a>
+      
+    </header>
+    <main>
+      <section class="hero">
+        <div class="eyebrow">TEMUKAN PENGULANGAN, SEMPURNAKAN TULISAN</div>
+        <h1>Tulisan lebih rapi<br><span>Tanpa pengulangan</span></h1>
+        <p class="hero-copy">Temukan kalimat, paragraf, dan gagasan yang berpotensi berulang. Tinjau temuan agar tulisanmu lebih efektif tanpa kehilangan makna.</p>
+      </section>
+
+      <section class="workspace" aria-label="Alat analisis teks">
+        <div class="editor-panel panel">
+          <div class="panel-heading">
+            <div><div class="panel-kicker">TEKS ANDA</div><h2>Masukkan tulisan</h2></div>
+            <div class="editor-actions">
+  <button class="text-button" id="clearBtn" type="button">Hapus Teks</button>
+</div>
+          </div>
+          <label class="sr-only" for="textInput">Teks yang ingin dianalisis</label>
+          <textarea id="textInput" placeholder="Tempel tulisanmu di sini…&#10;&#10;Lyrefine akan memeriksa kalimat, paragraf, dan gagasan yang berpotensi berulang."></textarea>
+          <div class="editor-bottom">
+            <div class="text-stats">
+              <span><strong id="wordCount">0</strong> kata</span><span class="stat-divider"></span>
+              <span><strong id="charCount">0</strong> karakter</span><span class="stat-divider"></span>
+              <span><strong id="sentenceCount">0</strong> kalimat</span>
+            </div>
+            <button class="primary-button" id="analyzeBtn" type="button">Analisis tulisan</button>
+          </div>
+          <p class="privacy-note">Teks diproses di browser ini dan tidak dikirim ke server.</p>
+        </div>
+
+        <aside class="results-panel panel">
+          <div class="panel-heading result-heading">
+            <div><div class="panel-kicker">ANALYSIS</div><h2>Hasil pemeriksaan</h2></div>
+            <span class="result-pill" id="resultStatus">Belum dianalisis</span>
+          </div>
+          <div class="summary-grid">
+            <div class="summary-card">
+              <span class="summary-icon purple">↻</span><span class="summary-label">Kalimat berulang</span><strong id="duplicateSentenceCount">—</strong>
+            </div>
+            <div class="summary-card">
+              <span class="summary-icon blue">▤</span><span class="summary-label">Paragraf berulang</span><strong id="duplicateParagraphCount">—</strong>
+            </div>
+            <div class="summary-card">
+              <span class="summary-icon amber">≈</span><span class="summary-label">Kalimat berpotensi mirip</span><strong id="similarSentenceCount">—</strong>
+            </div>
+            <div class="summary-card wide">
+              <span class="summary-icon amber">✦</span><span class="summary-label">Gagasan berpotensi mirip</span><strong id="similarIdeaCount">—</strong>
+            </div>
+          </div>
+          <div class="results-list-wrap">
+            <div class="results-list-heading"><div><h3>Temuan</h3><span id="findingCount">Menunggu teks</span></div><button class="text-button" id="copyReportBtn" type="button" disabled>Salin laporan</button></div>
+            <div id="resultsList" class="results-list">
+              <div class="empty-state">
+                <div class="empty-illustration" aria-hidden="true"><span class="empty-page"></span><span class="empty-spark">✦</span></div>
+                <strong>Siap merapikan tulisanmu?</strong>
+                <p>Masukkan teks lalu pilih <b>Analisis tulisan</b> untuk melihat temuan di sini.</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+      <section class="tip-row">
+        <div class="tip-icon">i</div>
+        <p><strong>Catatan penting:</strong> deteksi kemiripan merupakan perkiraan berbasis tumpang tindih kata dan kelompok istilah terkait, bukan pemahaman AI penuh. Hasil dapat melewatkan parafrasa yang sangat berbeda atau menandai teks yang kebetulan memakai istilah serupa. Gagasan mirip belum tentu salah atau perlu dihapus.</p>
+      </section>
+    </main>
+    <footer class="footer">
+      <a class="footer-brand" href="#" aria-label="Lyrefine">Lyrefine<span></span></a>
+      <span class="footer-copy">© 2026 Alypradana. All rights reserved.</span>
+
+    
+<div class="privacy-brand">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="15"
+    height="15"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <rect x="4" y="10" width="16" height="11" rx="2"/>
+    <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+  </svg>
+  <span>Privasi sejak awal</span>
+</div>
+
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
